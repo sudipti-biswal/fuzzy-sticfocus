@@ -1,0 +1,25 @@
+.column {
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 4fr));
+  row-gap: 3rem;
+  justify-items: flex-start;
+}
+.Courses {
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 4fr));
+  row-gap: 3rem;
+  justify-items: flex-start;
+}
+.Sounds {
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 4fr));
+  row-gap: 3rem;
+  justify-items: flex-start;
+}
+
+.box-wrap {
+  flex-wrap: wrap;
+}
+.grid-box {
+  margin-bottom: 45px;
+}
+.profile-btn {
+  margin: 0.5rem auto;
+}

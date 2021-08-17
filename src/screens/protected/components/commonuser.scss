@@ -1,0 +1,97 @@
+*{
+    top:0;
+    margin:0;
+}
+body{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+
+}
+.common_user{
+    display:flex;
+    padding:15px;
+   
+    cursor: pointer;
+    margin-top:1px ;
+    
+}
+.follower_info{
+    margin-left: 15px;
+    text-align: center;
+
+}
+
+.follower_info > p{
+    font-size: 10px;
+    margin-bottom: 8px;
+    color: #C0C0C0;
+    
+}
+
+.button_name{
+    margin-left:50%;
+    background-color: #00ff00;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 19vh;
+    &:hover{
+        background-color: rgb(50, 202, 50);
+    }
+}
+
+.button_info{
+    margin-left: 21%;
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
+.dot_symbol{
+    margin-left: 20px;
+    margin-top: 15px;
+   
+}
+
+
+@media screen and(max-width:1028px) {
+
+    .button_name{
+        width:25vh;
+        height:10vh;
+        margin-left: 25%;
+    } .button_info{
+        text-align: center;
+        font-size: 15px;
+    }
+  
+ }
+ @media screen and(max-width:768px){
+     .common_user{
+    display:flex;
+    padding:2px;
+   
+    cursor: pointer;
+    margin-top:1px ;
+    
+}
+.button_name{
+    width:50vh;
+    height:10vh;
+    margin-left: 20%;
+} .button_info{
+    text-align: center;
+    font-size: 15px;
+    margin-left: 10px;
+}
+ }
+
+
+     
+ 
+ 
+
+ 

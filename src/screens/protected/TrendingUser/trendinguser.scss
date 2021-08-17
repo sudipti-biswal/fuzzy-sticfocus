@@ -1,0 +1,340 @@
+.app{
+    background-color:rgba(255, 242, 242, 0.952);
+    background-size: cover;
+}
+
+.trending_user{
+    margin-top: -40px;
+}
+
+.covid_heading{
+   position: absolute;
+   margin-top: 40px;
+   margin-left: 9%;
+}
+.covid_heading > h1{
+    font-size:20px;
+}
+
+.covid_heading > h1 >strong{
+    color:red;
+}
+.circle_icon{
+    display: flex;
+    background-color: rgb(231, 221, 221);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+     margin-top: 4%;
+    align-items: center;
+    margin-left:5%;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+
+.Hash_tag{
+    font-size: 30px;
+   }
+.Learn_tag_info > h1{
+    display: flex;
+    margin-left: 12%;
+    margin-top:-4%;
+    font-size:25px;
+    font-weight: 700;
+    
+
+}
+.Learn_tag_info > p{
+    margin-left: 12%;
+    font-size: 20px;
+    color:rgb(194, 191, 191);
+}
+.greater_wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 83.5%;
+    margin-top: -4%;
+    background-color: #aaadaa;
+    border-radius: 10px;
+    height: 45px;
+    cursor: pointer;
+    width: 20vh;
+    &:hover{
+        background-color: rgb(160, 153, 153);
+    }
+}.timer_wrapper{
+    margin-top: 8px;
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight: 700;
+}.greater_than{
+    margin-top: 14px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.Testmonal_user{
+
+    margin-top:4%;
+    width:90%;
+    margin-left:5%;
+    
+}.Testmonal_user >img{
+    border-radius: 20px;
+    height:550px;
+    width:100%;
+}
+.circle_icon{
+    display: flex;
+    background-color: rgb(231, 221, 221);
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+     margin-top: 4%;
+    align-items: center;
+    margin-left:5%;
+    justify-content: center;
+    cursor: pointer;
+}.music_tag{
+    font-size: 28px;
+    margin-left: -5px;
+}.Learn_tag_info > h1{
+    display: flex;
+    margin-left: 12%;
+    margin-top:-4%;
+    font-size:25px;
+    font-weight: 700;
+}.Learn_tag_info > p{
+    margin-left: 12%;
+    font-size: 20px;
+    color:rgb(194, 191, 191);
+}
+
+
+//media que
+@media screen and(max-width:1492px){
+    .greater_wrapper{
+         
+        margin-left: 83.5%;
+        margin-top: -4%;
+         height: 43px;
+        width: 35vh;
+    }.timer_wrapper{
+        margin-top: 8px;
+        margin-left: 10px;
+        font-size: 22px;
+        font-weight: 700;
+    }.greater_than{
+        margin-top: 12px;
+        font-size: 20px;
+        // margin-right: 10px;
+    }
+}
+
+@media screen and(max-width:1284px){
+    .circle_icon{
+        height: 50px;
+      width: 50px;
+      margin-top: 4%;
+      }
+      .Hash_tag{
+        font-size: 25px;
+    
+       }.Learn_tag_info > h1{
+        display: flex;
+        margin-left: 12%;
+        margin-top:-5%;
+        font-size:22px;
+        font-weight: 700;
+      }
+      .Learn_tag_info > p{
+        margin-left: 12%;
+        font-size: 20px;
+        // color:rgb(194, 191, 191);
+    }.greater_wrapper{
+         
+        margin-left: 81.5%;
+        margin-top: -4%;
+         height: 43px;
+        width: 34vh;
+    }.timer_wrapper{
+        margin-top: 8px;
+        margin-left: 10px;
+        font-size: 22px;
+        font-weight: 700;
+    }.greater_than{
+        margin-top: 12px;
+        font-size: 20px;
+        // margin-right: 10px;
+    }.Testmonal_user{
+        margin-top: 6%;
+}
+}
+@media screen and(max-width:1028px){
+    .covid_heading{
+        margin-top: 20px;
+        margin-left: 7%;
+      }
+    .covid_heading > h1{
+        font-size:20px;
+    }.covid_heading > h1 >strong{
+        color:red;
+    }.circle_icon{
+        height: 45px;
+      width: 45px;
+      margin-top: 5%;
+      }
+      .Hash_tag{
+        font-size: 25px;
+    
+       }.Learn_tag_info > h1{
+        display: flex;
+        margin-left: 14%;
+        margin-top:-6%;
+        font-size:22px;
+        font-weight: 700;
+      }
+      .Learn_tag_info > p{
+        margin-left: 14%;
+        font-size: 17px;
+        // color:rgb(194, 191, 191);
+    }.greater_wrapper{
+         
+        margin-left: 76.5%;
+        margin-top: -6%;
+         height: 43px;
+        width: 34vh;
+    }.timer_wrapper{
+        margin-top: 8px;
+        margin-left: 10px;
+        font-size: 22px;
+        font-weight: 700;
+    }.greater_than{
+        margin-top: 12px;
+        font-size: 20px;
+        // margin-right: 10px;
+    }.Testmonal_user{
+        margin-top: 6%;
+    }
+    .Testmonal_user > img{
+        height:350px;
+
+    }
+    .circle_icon{
+        
+        height: 45px;
+        width: 45px;
+        margin-top:6%;
+        }.Learn_tag_info > h1{
+            // display: flex;
+            margin-left:14%;
+            margin-top:-6.5%;
+            font-size:25px;
+            // font-weight: 700;
+        }.Learn_tag_info > p{
+            margin-left: 14%;
+            font-size: 20px;
+            color:rgb(194, 191, 191);
+        }
+}
+@media  screen and(max-width:740px){
+    .covid_heading{
+        margin-top: 10px;
+        margin-left: 7%;
+      }
+    .covid_heading > h1{
+        font-size:15px;
+    }.covid_heading > h1 >strong{
+        color:red;
+    }.circle_icon{
+        height: 40px;
+      width: 40px;
+      margin-top:7%;
+      }
+      .Hash_tag{
+        font-size: 25px;
+    
+       }.Learn_tag_info > h1{
+        display: flex;
+        margin-left: 16%;
+        margin-top:-9%;
+        font-size:19px;
+        font-weight: 700;
+      }
+      .Learn_tag_info > p{
+        margin-left: 16%;
+        font-size: 17px;
+       
+    }
+    .greater_wrapper{
+         
+        margin-left: 68.5%;
+        margin-top: -9%;
+         height: 40px;
+        width: 30vh;
+    }.timer_wrapper{
+        margin-top: 8px;
+        margin-left: 10px;
+        font-size: 22px;
+        font-weight: 700;
+    }.greater_than{
+        margin-top: 12px;
+        font-size: 20px;
+        // margin-right: 10px;
+    }
+}
+@media screen and(max-width:476px){
+    .app{
+        width: 122%;
+    }
+    .trending_user{
+        // margin-top: -38px;
+        
+    }
+    .covid_heading{
+        margin-top: -3px;
+        margin-left: 2%;
+      }
+    .covid_heading > h1{
+        font-size:15px;
+    }.covid_heading > h1 >strong{
+        color:red;
+    }.circle_icon{
+        height: 35px;
+      width: 35px;
+      margin-top:7%;
+      }
+      .Hash_tag{
+        font-size: 25px;
+    
+       }.Learn_tag_info > h1{
+        display: flex;
+        margin-left: 20%;
+        margin-top:-11%;
+        font-size:15px;
+        font-weight: 500;
+      }
+      .Learn_tag_info > p{
+        margin-left: 19%;
+        font-size: 12px;
+       
+    }
+    .greater_wrapper{
+         
+        margin-left: 64.5%;
+        margin-top: -11%;
+         height: 30px;
+        width: 22vh;
+    }.timer_wrapper{
+        margin-top: 5px;
+        margin-left: 7px;
+        font-size: 18px;
+        font-weight: 700;
+    }.greater_than{
+        margin-top: 9px;
+        font-size: 15px;
+    } .Testmonal_user > img{
+        height:250px;
+
+    }
+}

@@ -1,0 +1,29 @@
+.img_rows {
+  columns: 4;
+  row-gap: 10px;
+  overflow: auto;
+  width: 100%;
+}
+
+.onh {
+  transition: all 1s;
+}
+.onh:hover {
+  transform: scale(1.1);
+}
+
+.img_rows {
+  column-gap: 15px;
+}
+
+.no-videos-text {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+@media (max-width: 1200px) {
+  .img_rows {
+    columns: 2;
+    margin-left: 89px;
+  }
+}
