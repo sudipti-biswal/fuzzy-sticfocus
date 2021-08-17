@@ -1,4 +1,3 @@
-// Importing Auth Pages
 import Signup from '../screens/auth/Signup';
 import Login from '../screens/auth/Login';
 import VerifyEmail from '../screens/auth/VerifyEmail';
@@ -14,6 +13,7 @@ import Followings from '../screens/protected/Followings';
 import CreatePost from '../screens/protected/CreatePost';
 import Chat from '../screens/protected/Chat';
 import Profile from '../screens/protected/Profile';
+import EditProfile from '../screens/protected/Profile/EditProfile';
 import search from '../screens/protected/Search/search';
 import authorProfile from '../screens/protected/AuthorProfile/profile';
 
@@ -149,5 +149,10 @@ export const protectedRoutes = [
     id: 13,
     path: '/video-solo/:id',
     component: PostDetail,
+  },
+  {
+    id: 14,
+    path: '/EditProfile',
+    component: EditProfile,
   },
 ];

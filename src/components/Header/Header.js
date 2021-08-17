@@ -23,7 +23,7 @@ import { SearchIcon } from '@chakra-ui/icons';
 import { BsCloudUpload } from 'react-icons/bs';
 import { GrChat } from 'react-icons/gr';
 import { BiUser } from 'react-icons/bi';
-import { AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineUser,AiTwotoneEdit } from 'react-icons/ai';
 import { Notifications } from '../Notifications';
 import search from '../../screens/protected/Search/search';
 import './Header.scss';
@@ -113,7 +113,7 @@ function Header(props) {
               <MenuItem as={Link} to='/profile' icon={<AiOutlineUser />}>
                 Profile
               </MenuItem>
-              <MenuItem>Draft</MenuItem>
+              <MenuItem as={Link} to='/EditProfile' icon={<AiTwotoneEdit />} >Edit Account</MenuItem>
               <MenuItem>Settings</MenuItem>
               <MenuDivider />
               <MenuItem onClick={handleLogout}>Logout</MenuItem>
