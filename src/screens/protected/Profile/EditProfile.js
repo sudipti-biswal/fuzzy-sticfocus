@@ -18,44 +18,73 @@ import {
   Button, 
   Textarea,
   Spacer,
+
 } from '@chakra-ui/react';
 import './EditProfile.scss';
 import { BASE_URL } from '../../../utils/api';
 import cookie from 'react-cookies';
 
 
+
+
 const EditProfile = () => {
-  const token = "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGMwOWMzMmI1ZWVmYzliYzQxOTEzZTEiLCJmaXJzdE5hbWUiOiJzYWtzaGkiLCJsYXN0TmFtZSI6IkRoZW5nZSIsIm1vYmlsZU51bWJlciI6Ijk3NjcwNDUwMzYiLCJlbWFpbCI6InJ1Y2hpQGdtYWlsLmNvbSIsImRlc2lnbmF0aW9uIjoiU3R1ZGVudCIsInNlc3Npb25JZCI6IjYxMWJiNGIxZjkwNGEzZGU1Y2JmNDY1NCIsImlhdCI6MTYyOTIwNTY4MX0.l3Mzhm5KQbuIX1V4GK0hTMxhVgnSho6x-i1sPL67Cbk";
-// console
-  const [upData, setUpData] = useState(null);
+
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [designation, setDesignation] = useState("");
+
+
+  
+
   const { user } = useSelector((state) => state.user);
 
-  console.log("token",token);
+  console.log("user --------->", user);
 
  const upDateProfile = () => {
-  const config = {
-    headers: { Authorization: ` ${token}` }
+
+   const data = {
+
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    phone: phone,
+    designation: designation,
+    id: user.id,
+
   };
 
+  console.log("data", data);
+
     axios
-      .put(`http://3.108.14.230:3333/api/authentication/update/profile`, config)
+      .put(`${BASE_URL}/authentication/update/profile`,data, {
+        headers: { Authorization: user.accessToken },
+      })
       .then((res) => {
         if (res.data.code === 200) {
-          // setUpData(res.data.data);
-          // setUpData(res.data.data);
+          // setUserData(res.data.data);
+          console.log(res.data);
         }
-        console.log("res", res)
       })
       .catch((err) => {
-        console.log(err);
+        console.log({ err });
       });
   };
 
-        useEffect(() => {
-            upDateProfile();
-          }, []);
-
-
+  useEffect(() => {
+    setFirstName(user.firstName);
+    setLastName(user.lastName)
+    setEmail(user.email);
+    setPhone(user.phone)
+    setDesignation(user.designation)
+  }, []);
+   // console.log("firstName --------->", firstName);
+   //  console.log("lastName --------->", lastName);
+   //   console.log("email --------->", email);
+   //    console.log("phone --------->", phone);
+   //     console.log("designation --------->", designation);
 
  return (
     <>
@@ -74,69 +103,47 @@ const EditProfile = () => {
                   </h2>
           
              
-                <AccordionPanel pb={4} >
-                  
-                  <Box mt={30}>
-                       <Image
-                       className="edit-img"
-                          borderRadius='full'
-                          boxSize='150px'
-                          // src={item.avatar}
-                          alt='Profile'/>
-                  </Box>     
+                <AccordionPanel pb={4} >    
                      <Stack spacing={5} m={5} >
+                      
+                  <Box mt={30}
+                    justify='left'
+                    boxSize='150px'>
+                    <Image src="https://bit.ly/sage-adebayo" alt="Profile "borderRadius='full' borderRadius='full' />
+                  </Box> 
 
-                     <Flex justify='center' >
+                     <Flex justify='left' >
                      <Text p={2} mr={3}>First Name</Text>
-                       <Input placeholder="{item.firstName}" size="md" width="auto" />
+                       <Input value={firstName} onChange={(e) => setFirstName(e.target.value)} size="md" width="auto" />
                     </Flex>
 
-                    <Flex justify='center' >
+                    <Flex justify='left' >
                      <Text p={2} mr={3}>Last Name</Text>
-                       <Input placeholder="{item.lastName}" size="md"  width="auto"/>
+                       <Input value={lastName} onChange={(e) => setLastName(e.target.value)}  size="md"  width="auto"/>
                     </Flex>
 
-                    <Flex justify='center' >
-                     <Text p={2} mr={3}>User Name</Text>
-                       <Input placeholder="@{item.username}" size="md"  width="auto" />
+                    <Flex justify='left' >
+                     <Text p={2} mr={7}>Email Id</Text>
+                       <Input value={email} onChange={(e) => setEmail(e.target.value)}    size="md"  width="auto" />
                     </Flex>
 
-                  
-                    <InputGroup className="call-input" >
+                    <Flex justify='left' >
+                     <Text p={2} mr={7}>Number</Text>
+                    <InputGroup >
                       <InputLeftAddon children="+91" />
-                      <Input type="tel" placeholder="phone number" width="auto" />
+                      <Input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)}  width="auto" />
                     </InputGroup>
+                    </Flex>
                     
-                    <Box
-                    display='flex'
-                    fontSize='15px'
-                    fontStyle='normal'
-                    fontWeight='600'
-                    lineHeight='72px'
-                    letterSpacing='0em'
-                    textAlign='left'
-                    justify='center'
-                  >
-                    
-                    <Text ml={4}> Following</Text>
-                     <Spacer ml={5} />                  
-                    <Text ml={4}>Followers</Text>
-                    <Spacer ml={5} />
-                    <Text ml={4}>Likes</Text>
-                    <Spacer ml={5} />
-                    <Text ml={4}>rating</Text>
-                    <Spacer ml={5} />
-                    <Text ml={4}>paidVideos</Text>
-                  </Box>
                     <Spacer mt={4} mb={5}/>
-                    <Textarea placeholder= "{item.bio}" />
+                    <Textarea value={designation} onChange={(e) => setDesignation(e.target.value)} />
                     
                     <Flex justify='right' mr={5}>
                       <Button                 
                           colorScheme="linkedin" 
                           height="48px"
-                          width="100px">        
-                           Save
+                          width="100px" onClick={() => upDateProfile()}>        
+                          Save
                       </Button>
                     </Flex>
                      </Stack>         
@@ -151,3 +158,5 @@ const EditProfile = () => {
 };
 
 export default EditProfile;
+
+
