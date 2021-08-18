@@ -29,13 +29,14 @@ import cookie from 'react-cookies';
 
 const EditProfile = () => {
 
-
+  const [users,setUsers]=useState(null)
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [avatar, setAvatar] = useState("");
   const [designation, setDesignation] = useState("");
-
+ 
 
   
 
@@ -46,17 +47,16 @@ const EditProfile = () => {
  const upDateProfile = () => {
 
    const data = {
-
+    avatar:avatar,
     firstName: firstName,
     lastName: lastName,
     email: email,
-    phone: phone,
-    designation: designation,
+    mobileNumber: phone,
+    bio: designation,
     id: user.id,
 
   };
 
-  console.log("data", data);
 
     axios
       .put(`${BASE_URL}/authentication/update/profile`,data, {
@@ -64,8 +64,8 @@ const EditProfile = () => {
       })
       .then((res) => {
         if (res.data.code === 200) {
-          // setUserData(res.data.data);
           console.log(res.data);
+          
         }
       })
       .catch((err) => {
@@ -78,19 +78,16 @@ const EditProfile = () => {
     setLastName(user.lastName)
     setEmail(user.email);
     setPhone(user.phone)
-    setDesignation(user.designation)
+    setDesignation(user.designation);
+    
   }, []);
-   // console.log("firstName --------->", firstName);
-   //  console.log("lastName --------->", lastName);
-   //   console.log("email --------->", email);
-   //    console.log("phone --------->", phone);
-   //     console.log("designation --------->", designation);
+  
 
  return (
     <>
 
       
-             <Accordion  allowToggle ml={9} mt={5} width="70%">
+             <Accordion allowToggle ml={9} mt={5} width="70%">
                 <AccordionItem >
                   <h2>
                     <AccordionButton>
@@ -104,15 +101,18 @@ const EditProfile = () => {
           
              
                 <AccordionPanel pb={4} >    
-                     <Stack spacing={5} m={5} >
-                      
-                  <Box mt={30}
-                    justify='left'
-                    boxSize='150px'>
-                    <Image src="https://bit.ly/sage-adebayo" alt="Profile "borderRadius='full' borderRadius='full' />
-                  </Box> 
+                <Stack spacing={5} m={5} >               
+                                      
+                    <Image
+                      mt={30}
+                      borderRadius='full'
+                      boxSize='100px'
+                      src={avatar}
+                      alt='Profile'
+                    />
+                
 
-                     <Flex justify='left' >
+                    <Flex justify='left' >
                      <Text p={2} mr={3}>First Name</Text>
                        <Input value={firstName} onChange={(e) => setFirstName(e.target.value)} size="md" width="auto" />
                     </Flex>

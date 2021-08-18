@@ -101,13 +101,13 @@ function LoginForm({ handleLogin }) {
     // }
 
     // Validating Password Input
-    if (
-      !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
-        password
-      )
-    ) {
-      errors.password = "Please enter a valid password";
-    }
+    // if (
+    //   !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
+    //     password
+    //   )
+    // ) {
+    //   errors.password = "Please enter a valid password";
+    // }
 
     setErrors(errors);
 
